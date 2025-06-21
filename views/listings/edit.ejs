@@ -1,95 +1,93 @@
 <% layout("/layouts/boilerplate") %>
-<body>
-<div class="row mt-5 mb-3">
-        <div class="col-8 offset-2">
-            <h3>Edit Your Listing</h3>
-            <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" class="needs-validation" novalidate enctype="multipart/form-data">
-                <div class="mb-3">
-                    <label for="title" class="form-label">Title : </label>
-                    <input class="form-control" id="title" name="listing[title]" type="text" value="<%= listing.title %>" required>
-                    <div class="invalid-feedback">Title should be vaild</div>
+<div class="row mt-5 mb-3 main-container navbar-expand">
+    <div class="col-8 offset-2">
+        <h3>Edit Your Listing</h3>
+        <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" class="needs-validation" novalidate enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title : </label>
+                <input class="form-control" id="title" name="listing[title]" type="text" value="<%= listing.title %>" required>
+                <div class="invalid-feedback">Title should be vaild</div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="description" class="form-label">Description : </label>
+                <textarea id="description" class="form-control" name="listing[description]" type="text" rows="5"><%= listing.description %></textarea>
+                <div class="invalid-feedback">Please enter a short description</div>
+            </div>
+
+            <div class="mb-3">
+                <p>Original Image :</p>
+                <img src="<%= originalUrl %>" style="width: 250px">
+            </div>
+            
+            <div class="mb-3">
+                <label for="image" class="form-label">Image : </label>
+                <input class="form-control" id="image" name="listing[image]" type="file">
+                <div class="invalid-feedback">Image should be vaild</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="title" class="form-label">Catagory : </label>
+                <select class="form-select form-control" aria-label="Default select example" id="catagory" name="listing[catagory]" type="text" value="<%= listing.catagory %>" required>
+                    <option selected>Select a catagory</option>
+                    <option value="rooms">Rooms</option>
+                    <option value="villa">Villa</option>
+                    <option value="historic">Historic</option>
+                    <option value="amazing pools">Amazing Pools</option>
+                    <option value="castel">Castels</option>
+                    <option value="camping">Camping</option>
+                    <option value="cottage">Cottage</option>
+                    <option value="farm">Farms</option>
+                    <option value="loft">Loft</option>
+                    <option value="arctic">Arctic</option>
+                    <option value="trending">Trending</option>
+                    <option value="iconic cities">Iconic Cities</option>
+                    <option value="banglow"> Banglow</option>
+                    <option value="beachfront">Beachfront</option>
+                    <option value="amazing mountains">Penthouse</option>
+                    <option value="amazing deserts">Farmhouse</option>
+                    <option value="amazing forests">Tent</option>
+                    <option value="amazing rivers">Treehouse</option>
+                    <option value="cabin">Cabin</option>
+                    <option value="boat">Boat</option>
+                    <option value="yeart">Yeart</option>
+                    <option value="safari lodge">Safari Lodge</option>
+                    <option value="island">Island</option>
+                    <option value="oasis">Oasis</option>
+                    <option value="beach house">Beach House</option>
+                </select>
+                <div class="invalid-feedback">Catagory should be vaild</div>
+            </div>
+            
+            <div class="row">
+                <div class="mb-3 col-md-4">
+                    <label for="price" class="form-label">Price : </label>
+                    <input class="form-control" id="price" name="listing[price]" type="number" value="<%= listing.price %>" required>
+                    <div class="invalid-feedback">Price should be vaild</div>
                 </div>
-                
-                <div class="mb-3">
-                    <label for="description" class="form-label">Description : </label>
-                    <textarea id="description" class="form-control" name="listing[description]" type="text" rows="5"><%= listing.description %></textarea>
-                    <div class="invalid-feedback">Please enter a short description</div>
+            
+                <div class="mb-3 col-md-8">
+                    <label for="location" class="form-label">Location : </label>
+                    <input class="form-control" id="location" name="listing[location]" type="text" value="<%= listing.location %>" required>
+                    <div class="invalid-feedback">Location should be vaild</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="mb-3 col-md-6">
+                    <label for="state" class="form-label">State : </label>
+                    <input class="form-control" id="state" name="listing[state]" type="text" value="<%= listing.state %>" required>
+                    <div class="invalid-feedback">State should be vaild</div>
                 </div>
 
-                <div class="mb-3">
-                    <p>Original Image :</p>
-                    <img src="<%= originalUrl %>" style="width: 250px">
+                <div class="mb-3 col-md-6">
+                    <label for="country" class="form-label">Country : </label>
+                    <input class="form-control" id="country" name="listing[country]" type="text" value="<%= listing.country %>" required>
+                    <div class="invalid-feedback">Country name should be vaild</div>
                 </div>
-                
-                <div class="mb-3">
-                    <label for="image" class="form-label">Image : </label>
-                    <input class="form-control" id="image" name="listing[image]" type="file">
-                    <div class="invalid-feedback">Image should be vaild</div>
-                </div>
-
-                <div class="mb-3">
-                    <label for="title" class="form-label">Catagory : </label>
-                    <select class="form-select form-control" aria-label="Default select example" id="catagory" name="listing[catagory]" type="text" value="<%= listing.catagory %>" required>
-                        <option selected>Select a catagory</option>
-                        <option value="rooms">Rooms</option>
-                        <option value="villa">Villa</option>
-                        <option value="historic">Historic</option>
-                        <option value="amazing pools">Amazing Pools</option>
-                        <option value="castel">Castels</option>
-                        <option value="camping">Camping</option>
-                        <option value="cottage">Cottage</option>
-                        <option value="farm">Farms</option>
-                        <option value="loft">Loft</option>
-                        <option value="arctic">Arctic</option>
-                        <option value="trending">Trending</option>
-                        <option value="iconic cities">Iconic Cities</option>
-                        <option value="banglow"> Banglow</option>
-                        <option value="beachfront">Beachfront</option>
-                        <option value="amazing mountains">Penthouse</option>
-                        <option value="amazing deserts">Farmhouse</option>
-                        <option value="amazing forests">Tent</option>
-                        <option value="amazing rivers">Treehouse</option>
-                        <option value="cabin">Cabin</option>
-                        <option value="boat">Boat</option>
-                        <option value="yeart">Yeart</option>
-                        <option value="safari lodge">Safari Lodge</option>
-                        <option value="island">Island</option>
-                        <option value="oasis">Oasis</option>
-                        <option value="beach house">Beach House</option>
-                    </select>
-                    <div class="invalid-feedback">Catagory should be vaild</div>
-                </div>
-                
-                <div class="row">
-                    <div class="mb-3 col-md-4">
-                        <label for="price" class="form-label">Price : </label>
-                        <input class="form-control" id="price" name="listing[price]" type="number" value="<%= listing.price %>" required>
-                        <div class="invalid-feedback">Price should be vaild</div>
-                    </div>
-                
-                    <div class="mb-3 col-md-8">
-                        <label for="location" class="form-label">Location : </label>
-                        <input class="form-control" id="location" name="listing[location]" type="text" value="<%= listing.location %>" required>
-                        <div class="invalid-feedback">Location should be vaild</div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="mb-3 col-md-6">
-                        <label for="state" class="form-label">State : </label>
-                        <input class="form-control" id="state" name="listing[state]" type="text" value="<%= listing.state %>" required>
-                        <div class="invalid-feedback">State should be vaild</div>
-                    </div>
-
-                    <div class="mb-3 col-md-6">
-                        <label for="country" class="form-label">Country : </label>
-                        <input class="form-control" id="country" name="listing[country]" type="text" value="<%= listing.country %>" required>
-                        <div class="invalid-feedback">Country name should be vaild</div>
-                    </div>
-                </div>
-                
-                <button class="btn add-btn">Update</button>
-            </form> 
-        </div>
+            </div>
+            
+            <button class="btn add-btn">Update</button>
+        </form> 
     </div>
-</body>
+</div>
