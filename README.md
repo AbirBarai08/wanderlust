@@ -30,7 +30,9 @@ node app.js
 - /views – EJS templates
 - /public – Static files (CSS, JS, images)
 - /utils – Helper modules
-- 
+- /init – Application setup and configuration logic  
+- /routes – Defines and organizes application endpoints
+
 # Future Ideas
 - Add user authentication and reviews
 - Enable location-based search
