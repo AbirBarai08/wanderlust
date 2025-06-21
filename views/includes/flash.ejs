@@ -1,0 +1,29 @@
+<% if(success && success.length) { %>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="check-circle-fill" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.97 11.03a.75.75 0 0 0 1.07 0l3-3a.75.75 0 1 0-1.08-1.04L7.5 9.439 6.03 7.97a.75.75 0 1 0-1.06 1.06l2 2z"/>
+        </symbol>
+    </svg>
+    <div class="alert alert-success alert-dismissible fade show col-6 offset-md-3 d-flex align-items-center mt-2" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+            <use xlink:href="#check-circle-fill"/>
+        </svg>
+        <%= success[0] %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<% } %>
+
+<% if(error && error.length) { %>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="exclamation-triangle-fill" viewBox="0 0 16 16">
+            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.964 0L.165 13.233c-.457.778.091 1.767.982 1.767h13.707c.89 0 1.438-.99.982-1.767L8.982 1.566zm-1.482 4.905a.905.905 0 1 1 1.81 0l-.35 3.507a.552.552 0 0 1-1.11 0l-.35-3.507zm.53 6.02a1.13 1.13 0 1 1 0-2.26 1.13 1.13 0 0 1 0 2.26z"/>
+        </symbol>
+    </svg>
+    <div class="alert alert-danger alert-dismissible fade show col-6 offset-md-3 d-flex align-items-center mt-2" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Error:">
+            <use xlink:href="#exclamation-triangle-fill"/>
+        </svg>
+        <%= error[0] %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<% } %>
