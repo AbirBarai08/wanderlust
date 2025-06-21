@@ -280,11 +280,11 @@ body {
 }
 
 .main-container {
-    transition: margin-top 0.3s ease-in-out;
+    transition: margin-top 0.3s ease-in-out !important;
 }
 
 .main-container.navbar-expanded {
-    margin-top: 14rem;
+    margin-top: 14rem !important;
 }
 
 /* Insert or New Page */
