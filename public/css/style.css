@@ -284,7 +284,28 @@ body {
 }
 
 .main-container.navbar-expanded {
-    margin-top: 12rem !important;
+    margin-top: 10rem !important;
+}
+
+@media (max-width : 550px ) {
+    #my-map {
+        width: 100% !important;
+        height: 400px !important;
+    }
+
+    #listing-img {
+        width: 100% !important;
+    }
+
+    #listing-card {
+        width: 100% !important;
+        margin-left: 5px;
+    }
+
+    #listing-reviews {
+        font-size: 0.8rem !important;
+        width: 300px !important;
+    }
 }
 
 /* Insert or New Page */
