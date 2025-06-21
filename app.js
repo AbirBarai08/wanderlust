@@ -89,7 +89,7 @@ app.use((req , res , next) => {
     next();
 })
 
-app.get("/" , (req , res) => {
+app.get("/" , async (req , res) => {
     let allListings = await Listing.find({});
     res.render("listings/index.ejs" , { allListings } );
 })
