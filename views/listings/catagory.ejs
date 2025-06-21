@@ -1,6 +1,93 @@
 <% layout("/layouts/boilerplate") %>
+<div id="filters" class="main-container navbar-expand">
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide filter">
+                <a href="/listings/search?catagory=trending" class="filter-link">
+                    <div class="filter-icon"><i class="fa-solid fa-fire"></i></div>
+                    <p>Trending</p>
+                </a>               
+            </div>
+
+            <div class="swiper-slide filter">
+                <a href="/listings/search?catagory=villa" class="filter-link">
+                    <div class="filter-icon"><i class="fa-solid fa-house"></i></div>
+                    <p>Villa</p>
+                </a>
+            </div>
+
+            <div class="swiper-slide filter">
+                <a href="/listings/search?catagory=historic" class="filter-link">
+                    <div class="filter-icon"><i class="fa-solid fa-landmark"></i></div>
+                    <p>Historic</p>
+                </a>
+            </div>
+            
+            <div class="swiper-slide filter">
+                <a href="/listings/search?catagory=rooms" class="filter-link">
+                    <div class="filter-icon"><i class="fa-solid fa-bed"></i></div>
+                    <p>Rooms</p>
+                </a>              
+            </div>         
+            
+            <div class="swiper-slide filter">
+                <a href="/listings/search?catagory=iconic+cities" class="filter-link">
+                    <div class="filter-icon"><i class="fa-solid fa-mountain-city"></i></div>
+                    <p>Iconic Cities</p>
+                </a>
+            </div>
+           
+            <div class="swiper-slide filter">
+                <a href="/listings/search?catagory=amazing+pools" class="filter-link">
+                    <div class="filter-icon"><i class="fa-solid fa-person-swimming"></i></div>
+                    <p>Amazing Pools</p>
+                </a>               
+            </div>
+            
+            <div class="swiper-slide filter">
+                <a href="/listings/search?catagory=castels" class="filter-link">
+                    <div class="filter-icon"><i class="fa-brands fa-fort-awesome"></i></div>
+                    <p>Castels</p>
+                </a>                
+            </div>
+                       
+            <div class="swiper-slide filter">
+                <a href="/listings/search?catagory=camping" class="filter-link">
+                    <div class="filter-icon"><i class="fa-solid fa-campground"></i></div>
+                    <p>Camping</p>
+                </a>               
+            </div>
+            
+            <div class="swiper-slide filter">
+                <a href="/listings/search?catagory=farms" class="filter-link">
+                    <div class="filter-icon"><i class="fa-solid fa-wheat-awn"></i></div>
+                    <p>Farms</p>
+                </a>
+            </div>
+
+            <div class="swiper-slide filter">
+                <a href="/listings/search?catagory=arctic" class="filter-link">
+                    <div class="filter-icon"><i class="fa-solid fa-snowflake"></i></div>
+                    <p>Arctic</p>
+                </a>
+            </div>         
+        </div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+
+    <div class="tax-switch">
+        <div class="form-check-reverse form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+            <label class="form-check-label" for="switchCheckDefault">Display total after taxes</label>
+        </div>
+    </div>
+</div>
+
 <div class="container">
-    <div class="row justify-content-evenly mt-4">
+    <div class="row justify-content-evenly mt-3">
         <% for(let listing of allListings) { %>
             <% if(listing.catagory === catagory) { %>
                 <div class="card home-cards mt-3" style="width: 26rem;">
