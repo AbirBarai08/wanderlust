@@ -12,6 +12,10 @@ navbarCollapse.addEventListener('hide.bs.collapse', function () {
   mainContainer.classList.remove("navbar-expanded");
 });
 
+window.addEventListener("load" , () => {
+  mainContainer.classList.remove("navbar-expanded");
+})
+
 //show.bs.collapse is a Bootstrap event that is triggered just before a collapsible element (like your navbar menu) is shown (expanded).
 //show.bs.collapse — before the element is shown
 // shown.bs.collapse — after the element is shown
