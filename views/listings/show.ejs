@@ -18,7 +18,7 @@
         <p class="card-text mt-2"><%= listing.location %></p>
         <p class="card-text mt-2"><%= listing.state %></p>
         <p class="card-text mt-2"><%= listing.country %></p>
-        <p class="card-text mt-2"><%= listing.catagory %></p>
+        <p class="card-text mt-2 mb-2"><%= listing.catagory %></p>
 
         <% if(currUser && currUser._id.equals(listing.owner)) { %> 
             <div class="show-btns mb-4">
@@ -40,7 +40,7 @@
                     <h6 class="card-title mt-2"><b>@<%= review.author.username %></b></h6>
                     <p class="starability-result card-text" data-rating="<%= review.rating %>"></p>
                     <p class="card-subtitle mb-2 text-body-secondary"><%= review.comment %></p>
-                    <p class="card-text"><%= review.createdAt.toString().split(" ").splice(0 , 4).join(" ") %></p>
+                    <p class="card-text mb-2"><%= review.createdAt.toString().split(" ").splice(0 , 4).join(" ") %></p>
                     <% if(currUser && currUser._id.equals(review.author)) { %> 
                         <form method="POST" action="/listings/<%= listing.id %>/reviews/<%= review.id %>?_method=DELETE">
                             <button class="btn btn-outline-dark">Delete</button>
