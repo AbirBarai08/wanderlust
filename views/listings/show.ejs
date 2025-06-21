@@ -4,7 +4,7 @@
     const coordinates = <%- JSON.stringify(listing.geometry.coordinates.reverse()) %>;
 </script>
 
-<div class="card row offset-md-2 mt-3" style="width: 37.5rem;">
+<div class="card row offset-md-2 mt-3 main-container navbar-expanded" style="width: 37.5rem;">
     <div class="col-8 col-md-4 mt-3 offset-1">
         <h3><%= listing.title %></h3>
     </div>
@@ -20,7 +20,7 @@
         <p class="card-text mt-2"><%= listing.country %></p>
         <p class="card-text mt-2 mb-2"><%= listing.catagory %></p>
 
-        <% if(currUser && currUser._id.equals(listing.owner)) { %> 
+        <% if(currUser && currUser._id.equals(listing.owner._id)) { %> 
             <div class="show-btns mb-4">
                 <a href="/listings/<%= listing.id %>/edit" class="btn add-btn">Edit</a>
                 <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
@@ -41,7 +41,7 @@
                     <p class="starability-result card-text" data-rating="<%= review.rating %>"></p>
                     <p class="card-subtitle mb-2 text-body-secondary"><%= review.comment %></p>
                     <p class="card-text mb-2"><%= review.createdAt.toString().split(" ").splice(0 , 4).join(" ") %></p>
-                    <% if(currUser && currUser._id.equals(review.author)) { %> 
+                    <% if(currUser && currUser._id.equals(review.author._id)) { %> 
                         <form method="POST" action="/listings/<%= listing.id %>/reviews/<%= review.id %>?_method=DELETE">
                             <button class="btn btn-outline-dark">Delete</button>
                         </form><br>
