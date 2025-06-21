@@ -299,11 +299,16 @@ body {
 
     #listing-card {
         width: 100% !important;
+        margin-left: 2px;
     }
 
     #listing-reviews {
         font-size: 0.8rem !important;
         width: 300px !important;
+    }
+
+    .main-container.navbar-expanded {
+        margin-top: 12rem !important;
     }
 }
 
