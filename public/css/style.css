@@ -284,7 +284,7 @@ body {
 }
 
 .main-container.navbar-expanded {
-    margin-top: 14rem !important;
+    margin-top: 10rem !important;
 }
 
 @media (max-width : 550px ) {
@@ -305,6 +305,23 @@ body {
     #listing-reviews {
         font-size: 0.8rem !important;
         width: 300px !important;
+    }
+
+    .main-container.navbar-expanded {
+        margin-top: 12rem !important;
+    }
+}
+
+@media (min-width: 550px ) and (max-width: 770px) {
+    #listing-card,
+    #listing-reviews,
+    #comment-leave-btn-form {
+        margin-left: 4rem !important;
+    }
+
+    #listing-map,
+    #review-form-container {
+        margin-right: 14rem !important;
     }
 }
 
