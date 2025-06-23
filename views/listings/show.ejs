@@ -4,7 +4,7 @@
     const coordinates = <%- JSON.stringify(listing.geometry.coordinates.reverse()) %>;
 </script>
 
-<div id="listing-card" class="card row offset-md-2 mt-3 main-container navbar-expanded" style="width: 37.5rem;">
+<div id="listing-card" class="card row offset-md-1 offset-lg-2 mt-3 main-container navbar-expanded" style="width: 37.5rem;">
     <div class="col-8 mt-3 offset-1">
         <h3><%= listing.title %></h3>
     </div>
@@ -32,7 +32,7 @@
 </div>
 
 <% if(listing.reviews.length > 0) { %>
-    <div id="listing-reviews" class="row offset-md-2 mt-3">
+    <div id="listing-reviews" class="row offset-md-1 offset-lg-2 mt-3">
         <p><b>All Reviews</b></p>
         <% for(let review of listing.reviews) { %>
             <div class="card col-md-5 mb-3 ms-3">
@@ -52,13 +52,13 @@
     </div>
 <% } %>
 
-<form class="offset-md-2 mb-2 mt-2">
+<form id="comment-leave-btn-form" class="offset-md-1 offset-lg-2 mb-2 mt-2">
     <button class="btn add-btn" id="show-review-form-btn">Leave a comment</button>
 </form>
 
 <br>
 <div class="row mt-5 mb-2" id="review-form-container" style="display:none;">
-    <div class="col-md-6 offset-md-2">
+    <div class="col-md-6 offset-md-1 offset-lg-2">
         <form method="POST" action="/listings/<%= listing.id %>/reviews" class="needs-validation" novalidate>
             <div class="mb-3">
                 <label for="rating" class="form-label">Rating : </label>
@@ -92,13 +92,15 @@
         </form> 
     </div>
 </div>
+<br>
 
 <div id="listing-map" class="row">
-  <div class="col-md-6 offset-md-2 mb-3">
+<div class="col-md-6 offset-md-2 mb-3">
     <h3>Where you'll be</h3>
     <div id="my-map"></div>
-  </div>
 </div>
+</div>
+
 
 <script>
     const isLoggedIn = "<%= currUser ? 'true' : 'false' %>";
