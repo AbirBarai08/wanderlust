@@ -1,4 +1,4 @@
-    const navbarCollapse = document.getElementById('navbarSupportedContent');
+const navbarCollapse = document.getElementById('navbarSupportedContent');
 const mainContainer = document.querySelector(".main-container");
 const showReviewFormBtn = document.getElementById("show-review-form-btn");
 const reviewFormContainer = document.getElementById("review-form-container");
