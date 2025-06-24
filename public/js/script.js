@@ -1,4 +1,4 @@
-const navbarCollapse = document.getElementById('navbarSupportedContent');
+    const navbarCollapse = document.getElementById('navbarSupportedContent');
 const mainContainer = document.querySelector(".main-container");
 const showReviewFormBtn = document.getElementById("show-review-form-btn");
 const reviewFormContainer = document.getElementById("review-form-container");
@@ -37,8 +37,16 @@ navbarCollapse.addEventListener('hide.bs.collapse', function () {
   })
 })()
 
+//Hide the review form container when the submit button is clicked
+if(submitReviewFormBtn) {
+  submitReviewFormBtn.addEventListener("click" , () => {
+  reviewFormContainer.style.display = "none";
+})
+}
+
 //Show the review form conatiner when the button is clicked
-showReviewFormBtn.addEventListener("click" , (e) => {
+if(showReviewFormBtn) {
+  showReviewFormBtn.addEventListener("click" , (e) => {
   e.preventDefault();
   if(isLoggedIn === 'false') {
     window.location.href = "/user/login";
@@ -46,11 +54,7 @@ showReviewFormBtn.addEventListener("click" , (e) => {
     reviewFormContainer.style.display = "block";
   }
 })
-
-//Hide the review form container when the submit button is clicked
-submitReviewFormBtn.addEventListener("click" , () => {
-  reviewFormContainer.style.display = "none";
-})
+}
 
 window.addEventListener("load" , () => {
   mainContainer.classList.remove("navbar-expanded");
