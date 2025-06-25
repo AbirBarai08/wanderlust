@@ -3,6 +3,8 @@ const mainContainer = document.querySelector(".main-container");
 const showReviewFormBtn = document.getElementById("show-review-form-btn");
 const reviewFormContainer = document.getElementById("review-form-container");
 const submitReviewFormBtn = document.getElementById("submit-review-form-btn");
+const taxSwitch = document.querySelector("#switchCheckDefault");
+const taxInfo = document.querySelectorAll(".tax-info");
 
 navbarCollapse.addEventListener('show.bs.collapse', function () {
   mainContainer.classList.add("navbar-expanded");
@@ -54,6 +56,14 @@ if(showReviewFormBtn) {
     reviewFormContainer.style.display = "block";
   }
 })
+}
+
+if(taxSwitch) {
+  taxSwitch.addEventListener("click" , () => {
+    taxInfo.forEach(el => {
+        el.classList.toggle("tax-info");
+    });
+  });
 }
 
 window.addEventListener("load" , () => {
