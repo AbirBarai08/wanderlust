@@ -90,7 +90,7 @@
     <div class="row justify-content-evenly mt-3">
         <% for(let listing of allListings) { %>
             <% if(listing.catagory === catagory) { %>
-                <div class="card home-cards mt-3" style="width: 26rem;">
+                <div class="card home-cards mt-3" style="width: 20rem;">
                     <a href="/listings/<%= listing.id %>" class="listing-link">
                         <img src="<%= listing.image.url %>" class="card-img-top" alt="listing-image" style="height: 19rem;">
                         <div class="card-img-overlay"></div>
