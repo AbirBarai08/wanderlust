@@ -94,7 +94,7 @@
       </div>
     <% } %>
     <% for (let listing of allListings) { %>
-      <div class="card home-cards mt-3" style="width: 26rem;">
+      <div class="card home-cards mt-3" style="width: 20rem;">
         <a href="/listings/<%= listing.id %>" class="listing-link">
           <img src="<%= listing.image.url %>" class="card-img-top" alt="listing-image" style="height: 19rem">
           <div class="card-img-overlay"></div>
@@ -102,7 +102,7 @@
             <p class="card-text">
             <b><%= listing.title %></b> <br>
             <%= listing.price.toLocaleString("en-IN") %> / night<br>
-            <%= listing.category %><br>
+            <%= listing.catagory %><br>
             <%= listing.location %><br>
             <%= listing.state %><br>
             <%= listing.country %>
