@@ -108,14 +108,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-    const taxSwitch = document.querySelector("#switchCheckDefault");
-    const taxInfo = document.querySelectorAll(".tax-info");
-    taxSwitch.addEventListener("click" , () => {
-        taxInfo.forEach(el => {
-            el.classList.toggle("tax-info");
-        });
-    });
-
     const swiper = new Swiper('.swiper', {
         // Optional parameters
         direction: 'horizontal',
